@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHL Knowledge Base</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="scanline"></div>
+    <div class="bg-gradient"></div>
+    <div class="bg-grid"></div>
+
+    <div id="login-container">
+        <div class="login-brand">
+            <div class="brand-mark"></div>
+            <span class="brand-text">DHL · KB</span>
+        </div>
+        <h2>Sign in</h2>
+        <input type="text" id="username" placeholder="Username" autocomplete="off">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="login()">Sign In →</button>
+        <p id="login-error"></p>
+        <div class="login-footer">
+            <span class="dot"></span>
+            <span>secured · v2.0</span>
+        </div>
+    </div>
+
+    <div id="app-container" style="display:none;">
+        <header>
+            <div class="nav-left">
+                <div class="brand-mark"></div>
+                <span class="nav-title">DHL · KNOWLEDGE BASE</span>
+                <span class="nav-divider"></span>
+                <nav class="nav-tabs">
+                    <button class="nav-tab active" data-tab="active" onclick="switchTab('active')">Active</button>
+                    <button class="nav-tab" data-tab="archive" onclick="switchTab('archive')">Archive <span class="tab-count" id="archive-count">0</span></button>
+                </nav>
+            </div>
+            <div class="nav-right">
+                <span class="user-pill">
+                    <span class="status-dot"></span>
+                    <span id="user-display"></span>
+                </span>
+                <button class="btn-ghost" onclick="logout()">Sign Out</button>
+            </div>
+        </header>
+
+        <main>
+            <div class="container">
+
+                <section class="stats-bar">
+                    <div class="stat">
+                        <span class="stat-label">Total</span>
+                        <span class="stat-value" id="stat-total">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Drafts</span>
+                        <span class="stat-value" id="stat-drafts">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Awaiting Review</span>
+                        <span class="stat-value" id="stat-reviewed">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Published</span>
+                        <span class="stat-value" id="stat-published">0</span>
+                    </div>
+                    <div class="stat stat-action">
+                        <button class="btn-rpa" onclick="triggerRPASync()">
+                            <span class="rpa-icon">⟳</span>
+                            <span>RPA SYNC</span>
+                        </button>
+                    </div>
+                </section>
+
+                <div class="controls">
+                    <input type="text" id="search-bar" placeholder="Search by title or tag..." onkeyup="filterArticles()">
+                    <select id="status-filter" onchange="filterArticles()">
+                        <option value="All">All Statuses</option>
+                        <option value="Draft">Draft</option>
+                        <option value="Reviewed">Reviewed</option>
+                        <option value="Published">Published</option>
+                    </select>
+                </div>
+
+                <div class="upload-section" id="upload-section">
+                    <div class="upload-header">
+                        <h3>INTELLIGENCE INTAKE</h3>
+                        <span class="ai-badge">AI ACTIVE</span>
+                    </div>
+                    
+                    <div class="drop-zone" id="drop-zone">
+                        <span class="drop-icon">📥</span>
+                        <p>Drop <b>.txt</b>, <b>.docx</b>, <b>.msg</b>, or <b>images</b> here or click to browse</p>
+                        <input type="file" id="file-input" hidden accept=".txt,.log,.docx,.msg,.png,.jpg,.jpeg">
+                    </div>
+
+                    <textarea id="raw-input" placeholder="Or paste raw logs, chats, or emails here..." style="height:90px;"></textarea>
+                    <button type="button" id="ai-polish-btn" class="btn-ai" onclick="aiPolish()">✨ AI POLISH</button>
+
+                    <div id="polished-fields" style="display:none; margin-top:16px;">
+                        <input type="text" id="title" placeholder="Article title">
+                        <textarea id="content" placeholder="Polished content" style="height:90px;"></textarea>
+                        <input type="text" id="tags" placeholder="Tags">
+                        <div id="conflict-warning" style="display:none;"></div>
+                        <button type="button" onclick="saveArticle()">Save Draft</button>
+                    </div>
+                </div>
+
+                <div class="articles-section">
+                    <div class="section-header">
+                        <h3 id="section-title">ARTICLES</h3>
+                        <span class="result-count" id="result-count"></span>
+                    </div>
+                    <div id="article-list"></div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+{
+  "users": [
+    {
+      "id": "u1",
+      "username": "editor1",
+      "password": "password123",
+      "role": "editor"
+    },
+    {
+      "id": "u2",
+      "username": "reviewer1",
+      "password": "password123",
+      "role": "reviewer"
+    }
+  ],
+  "articles": [
+    {
+      "id": "1",
+      "title": "Handling Damaged Parcels from Customs",
+      "content": "If a parcel arrives damaged from customs, take 3 photos, log in DHL core system, and notify the customer within 24 hours.",
+      "status": "Reviewed",
+      "tags": "customs, damage, sop",
+      "createdBy": "RPA_Bot",
+      "createdAt": "2026-05-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Updating Address for Redirected Shipments",
+      "content": "Verify customer ID before changing address in the routing matrix. Update the manifest and trigger an SMS alert.",
+      "status": "Published",
+      "tags": "routing, address, customer-service",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-02T11:30:00Z"
+    },
+    {
+      "id": "4Pll3RpD2Ac",
+      "title": "Express Delivery Cutoff Times",
+      "content": "1. Verify destination cutoff time in routing matrix\n2. Notify customer of late dispatch via SMS\n3. Reroute to next available flight if missed",
+      "tags": "express, routing, cutoff",
+      "status": "Draft",
+      "createdBy": "RPA_Bot",
+      "createdAt": "2026-05-15T05:06:27.240Z",
+      "previousStatus": "Draft"
+    },
+    {
+      "id": "pJ3dZexaDjg",
+      "title": "Cold Chain Shipment Protocol",
+      "content": "1. Inspect refrigeration unit temperature on intake\n2. Log temperature every 4 hours during transit\n3. Flag any deviation above 4°C immediately\n4. Deliver within 24-hour window only",
+      "tags": "cold-chain, pharma, temperature",
+      "status": "Archived",
+      "createdBy": "RPA_Bot",
+      "createdAt": "2026-05-15T06:45:50.802Z",
+      "previousStatus": "Draft"
+    },
+    {
+      "id": "TBFBVCkRB0g",
+      "title": "Customer Credit Approval and Onboarding Process",
+      "content": "1. Receive customer credit application via email or online portal.\n2. Verify customer information and credit history.\n3. Check credit score and report.\n4. Review and approve credit application.\n5. Create new customer account in DHL system.\n6. Assign customer to designated account manager.\n7. Send welcome email and credit approval notification to customer.\n8. Update customer information in CRM system.",
+      "tags": "Customer Credit, Onboarding, DHL, Logistics, Approval",
+      "status": "Archived",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-15T06:47:45.805Z",
+      "previousStatus": "Draft"
+    },
+    {
+      "id": "DcJY1J7R9Sg",
+      "title": "Absence Notification and System A Coverage",
+      "content": "1. Notify team lead of absence via Teams/Slack/email.\n2. Identify and assign coverage for system A.\n3. Ensure system A is operational and functioning correctly.",
+      "tags": "absence,system A,coverage,notification",
+      "status": "Reviewed",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-15T07:51:40.192Z"
+    },
+    {
+      "id": "N96JSwVQaDc",
+      "title": "DHL Package Tracking and Delivery",
+      "content": "1. Check package tracking number on DHL website or mobile app.\n2. Verify package status with DHL customer service if tracking information is not available.\n3. Update package status in DHL system if delivery is delayed or failed.\n4. Notify customer of delivery status and estimated delivery time.\n5. Resolve any issues with package delivery or tracking.",
+      "tags": "package tracking, delivery, customer service, DHL system",
+      "status": "Draft",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-15T07:53:25.269Z"
+    },
+    {
+      "id": "faYRgAgFtfo",
+      "title": "Image-Based Package Label Scanning",
+      "content": "1. Scan the image of the package label using an OCR tool.\n2. Verify the accuracy of the extracted text.\n3. Manually correct any errors in the extracted text.\n4. Use the corrected text to update the package tracking information.",
+      "tags": "package tracking, label scanning, OCR",
+      "status": "Draft",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-15T07:53:35.322Z"
+    },
+    {
+      "id": "zzajwSnP3aQ",
+      "title": "Image-Based Shipping Label Creation",
+      "content": "1. Open the image file 'Teams Message 2.jpg' in an image editing software.\n2. Use OCR tool to extract text from the image.\n3. Identify the shipping label details: sender's name, address, recipient's name, address, package weight, and dimensions.\n4. Verify the accuracy of the extracted information.\n5. Create a new shipping label using the extracted information.\n6. Print the shipping label on a DHL-approved label paper.",
+      "tags": "shipping label, image processing, OCR, logistics",
+      "status": "Archived",
+      "createdBy": "editor1",
+      "createdAt": "2026-05-15T07:53:52.741Z",
+      "previousStatus": "Draft"
+    },
+    {
+      "id": "eJUsqGpvvJQ",
+      "title": "Cold Chain Shipment Protocol",
+      "content": "1. Inspect refrigeration unit temperature on intake\n2. Log temperature every 4 hours during transit\n3. Flag any deviation above 4°C immediately\n4. Deliver within 24-hour window only",
+      "tags": "cold-chain, pharma, temperature",
+      "status": "Draft",
+      "createdBy": "RPA_Bot",
+      "createdAt": "2026-05-15T07:54:45.487Z"
+    }
+  ],
+  "logs": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
